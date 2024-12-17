@@ -1,0 +1,31 @@
+{% extends 'base.html' %} {% block body %}
+<div class="containe-fluid mx-0 mb-3">
+
+    <img src="https://images.pexels.com/photos/163007/phone-old-year-built-1955-bakelite-163007.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100 mx-0" alt="...">
+
+</div>
+<div class="container-fluid py-3">
+    <h1 class="text-center">Contact us</h1>
+    <form method="post" actions="/contact">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name " placeholder="Enter your name ">
+        </div>
+        <div class="form-group ">
+            <label for="email " class="form-label ">Email adress</label>
+            <input type="email " class="form-control " id="email " name="email" placeholder="Enter your Email">
+        </div>
+        <div class="form-group">
+            <label for="Phone" class="form-label ">Phone Number</label>
+            <input type="Phone" class="form-control" id="Phone" name="Phone" placeholder="Enter your Phone Number">
+        </div>
+        <div class="form-group">
+            <label for="desc">tell me about what you want to contact me for</label>
+            <textarea class="form-control" id="desc" rows="3" name="desc ">  </textarea>
+        </div>
+        <button type="button " class="btn btn-primary ">Submit</button>
+    </form>
+</div>
+
+{% endblock body %}
