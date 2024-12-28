@@ -45,12 +45,16 @@ from datetime import datetime
 from home.models import Contact
 
 
+from django.contrib import messages
+
+
 
 def index(request):
     context={
 
         'variable':'this is a sent'
     }
+    
     return render(request , 'index.html', context)
 
 def about(request):
@@ -77,6 +81,7 @@ def contacts(request):
         # Create a new contact and save it to the database
         contact = Contact(name=name, email=email, phone=phone, desc=desc, date=datetime.today())
         contact.save()
+        messages.success(request, "message sent.")
 
         # Redirect after successful POST to prevent form resubmission on page refresh
         return redirect('success')  # You can replace 'success' with the actual success page URL or view name

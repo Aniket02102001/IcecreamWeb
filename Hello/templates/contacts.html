@@ -6,11 +6,11 @@
 </div>
 <div class="container-fluid py-3">
     <h1 class="text-center">Contact us</h1>
-    <form method="post" actions="/contact">
+    <form method="post" action="/contacts">
         {% csrf_token %}
         <div class="form-group">
             <label for="name" class="form-label">Name</label>
-            <input type="text" class="form-control" id="name" name="name " placeholder="Enter your name ">
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name ">
         </div>
         <div class="form-group ">
             <label for="email " class="form-label ">Email adress</label>
@@ -18,13 +18,13 @@
         </div>
         <div class="form-group">
             <label for="phone" class="form-label ">Phone Number</label>
-            <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter your phone Number">
+            <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter your phone Number">
         </div>
         <div class="form-group">
             <label for="desc">tell me about what you want to contact me for</label>
             <textarea class="form-control" id="desc" rows="3" name="desc ">  </textarea>
         </div>
-        <button type="button " class="btn btn-primary ">Submit</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
 
