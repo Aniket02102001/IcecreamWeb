@@ -25,6 +25,6 @@ admin.site.index_title = "Welcome to Ani Icecream Researcher Portal"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('Home.urls'))
+    path('', include('home.urls'))
     
 ]
