@@ -72,19 +72,17 @@ def contacts(request):
         email = request.POST.get('email')
         phone = request.POST.get('phone')  # Changed to 'phone' to match the model
         desc = request.POST.get('desc')
-
-        # Validate that required fields are not empty
-        if not name or not email or not phone or not desc:
-            # If any required field is empty, return an error message
-            return render(request, 'contacts.html', {'error': 'All fields are required'})
-
-        # Create a new contact and save it to the database
+        
+        if not desc:
+            desc = "No description provided."
         contact = Contact(name=name, email=email, phone=phone, desc=desc, date=datetime.today())
         contact.save()
-        messages.success(request, "message sent.")
-
+        
         # Redirect after successful POST to prevent form resubmission on page refresh
-        return redirect('success')  # You can replace 'success' with the actual success page URL or view name
+          # You can replace 'success' with the actual success page URL or view name
 
     # Render the contact form if it's a GET request
     return render(request, 'contacts.html')
+
+
+    
