@@ -42,7 +42,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'Hello.urls'
+ROOT_URLCONF = 'HELLO.urls'
 
 TEMPLATES = [
     {
@@ -60,7 +60,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Hello.wsgi.application'
+WSGI_APPLICATION = 'HELLO.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
